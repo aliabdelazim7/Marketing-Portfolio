@@ -50,6 +50,7 @@ export const Navbar: React.FC = () => {
     { href: '#about', label: t.nav.about },
     { href: '#expertise', label: t.nav.expertise },
     { href: '#timeline', label: t.nav.journey },
+    { href: '#testimonials', label: t.nav.reviews },
     { href: '#contact', label: t.nav.contact },
   ];
 

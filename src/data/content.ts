@@ -73,6 +73,24 @@ export interface WorkflowStep {
   outputAr: string;
 }
 
+export interface TestimonialItem {
+  id: string;
+  quote: string;
+  quoteAr: string;
+  context: string;
+  contextAr: string;
+  authorRole: string;
+  authorRoleAr: string;
+  category: string;
+  categoryAr: string;
+  screenshot: string;
+  timestamp: string;
+  metricsBadge: string;
+  metricsBadgeAr: string;
+  highlights: string[];
+  highlightsAr: string[];
+}
+
 export interface ExperienceItem {
   period: string;
   periodAr: string;
@@ -117,6 +135,7 @@ export const contentData = {
       expertise: "Capabilities",
       journey: "Timeline",
       contact: "Contact",
+      reviews: "Reviews",
       auditButton: "Audit",
     },
     hero: {
@@ -200,13 +219,23 @@ export const contentData = {
       outputProfit: "Gross Ad Contribution (Revenue - Spend)",
       note: "Based on standard performance funnel economics. Use this model during our discovery call to evaluate campaign viability.",
     },
+    testimonialsSection: {
+      chapter: "05 // LIVE CLIENT FEEDBACK",
+      title: "Real, unfiltered feedback from active campaigns.",
+      subtitle:
+        "Direct WhatsApp screenshots from business owners and partners — verifying lead inflow, rapid problem-solving, and day-to-day execution reliability.",
+      verifiedBadge: "Verified WhatsApp Communication",
+      zoomPrompt: "Click screenshot to inspect full resolution",
+      closeModal: "Close Preview",
+      viewFullChat: "View Full Screenshot",
+    },
     experienceSection: {
       chapter: "04 // PROFESSIONAL JOURNEY",
       title: "Focused, rigorous hands-on execution.",
       subtitle: "Two years of continuous ad spend management, testing, and conversion optimization.",
     },
     contactSection: {
-      chapter: "05 // DIRECT CONTACT & AUDIT",
+      chapter: "06 // DIRECT CONTACT & AUDIT",
       title: "Ready to scale your paid acquisition with discipline?",
       subtitle:
         "Whether you're launching a new venture, troubleshooting rising customer acquisition costs, or seeking a media buyer to scale an existing funnel.",
@@ -276,6 +305,7 @@ export const contentData = {
       expertise: "الخدمات",
       journey: "المسار",
       contact: "تواصل",
+      reviews: "آراء العملاء",
       auditButton: "طلب تدقيق",
     },
     hero: {
@@ -359,13 +389,23 @@ export const contentData = {
       outputProfit: "فائض الإنفاق الإعلاني (المبيعات - الميزانية)",
       note: "يعتمد هذا النموذج على معادلات مسار التحويل المعيارية. يمكننا مناقشة هذه الأرقام تفصيلياً خلال جلسة تدقيق الحساب لتحديد المستهدفات بدقة.",
     },
+    testimonialsSection: {
+      chapter: "05 // آراء وتجارب العملاء الحية",
+      title: "رسائل حقيقية ومباشرة من قلب الحملات الإعلانية.",
+      subtitle:
+        "لقطات شاشة أصلية من محادثات WhatsApp اليومية مع أصحاب الأعمال والشركاء — تبرهن على غزارة تدفق الطلبات، التفكير الهندسي، والثقة في التنفيذ.",
+      verifiedBadge: "محادثة موثقة عبر WhatsApp",
+      zoomPrompt: "اضغط على الصورة لمعاينة لقطة الشاشة بالحجم الكامل",
+      closeModal: "إغلاق المعاينة",
+      viewFullChat: "معاينة اللقطة بالحجم الكامل",
+    },
     experienceSection: {
       chapter: "04 // الخبرة والمسار المهني",
       title: "عامان من الخبرة الميدانية المركزة في إدارة وتوسيع الحملات الإعلانية.",
       subtitle: "إدارة تشغيلية يومية لميزانيات إعلانية على منصات Meta وGoogle، تشمل اختبار مئات الأصول الإعلانية وتحسين معدلات التحويل التجاري.",
     },
     contactSection: {
-      chapter: "05 // قنوات الاتصال وطلب التدقيق",
+      chapter: "06 // قنوات الاتصال وطلب التدقيق",
       title: "هل أنت مستعد لمضاعفة مبيعاتك وبناء منظومة إعلانية رابحة؟",
       subtitle:
         "سواء كنت تؤسس علامة تجارية جديدة، أو تسعى لخفض تكلفة الاستحواذ ورفع كفاءة ميزانياتك الإعلانية، أو تبحث عن متخصص يدير ويوجه حساباتك باحترافية.",
@@ -1823,6 +1863,64 @@ export const experienceTimeline: ExperienceItem[] = [
       "ضغط وتحسين أحجام الصور وملفات CSS لتقليل وقت التحميل وخفض معدلات الارتداد",
       "إعداد شهادات SSL وبروتوكولات الأمان لحماية المواقع من الثغرات البرمجية الشائعة",
       "دمج أدوات تسريع العمل البرمجي وأكواد CSS مخصصة لتسريع تجربة التصفح",
+    ],
+  },
+];
+
+
+export const testimonialsList: TestimonialItem[] = [
+  {
+    id: "whatsapp-leads-inflow",
+    quote: "الواتساب مليان ماشاء الله",
+    quoteAr: "الواتساب مليان ماشاء الله",
+    context:
+      "Direct snapshot from a live WhatsApp campaign showing high-velocity message volume, active customer orders, and seamless AI automated CRM reply sequences handling incoming buyer inquiries.",
+    contextAr:
+      "لقطة حية من صندوق محادثات WhatsApp لحملة تجارية نشطة، توضح تدفقاً غزيراً للاستفسارات وطلبيات العملاء، بالتكامل مع أتمتة الردود بالذكاء الاصطناعي لحسم المحادثات فورياً.",
+    authorRole: "Commercial Printing & Wholesale Merchant",
+    authorRoleAr: "عميل في قطاع الطباعة والتوريد التجاري B2B",
+    category: "High-Volume Lead Inflow & Automation",
+    categoryAr: "تدفق مكثف للاستفسارات وأتمتة الردود",
+    screenshot: "/testimonials/whatsapp-feedback-1.jpg",
+    timestamp: "3:45 PM",
+    metricsBadge: "Lead Volume Spike",
+    metricsBadgeAr: "تدفق محادثات بيعية مستمر",
+    highlights: [
+      "Overwhelming inbound buyer chats requiring automated CRM delegation",
+      "Real-time customer order processing without inquiry drop-off",
+      "Seamless integration of AI response workflows to capture every lead",
+    ],
+    highlightsAr: [
+      "تدفق محادثات مكثف من المشترين استدعى تفعيل الردود الآلية بالذكاء الاصطناعي",
+      "معالجة فورية لاستفسارات العملاء على مدار الساعة دون فقدان أي فرصة بيعية",
+      "كفاءة استهداف إعلاني حققت طلباً تجارياً حقيقياً فاق توقعات العميل",
+    ],
+  },
+  {
+    id: "whatsapp-engineer-praise",
+    quote: "يابني انت والله برنس اقسم بالله... مهندس مهندس يعني مفيش كلام",
+    quoteAr: "يابني انت والله برنس اقسم بالله... مهندس مهندس يعني مفيش كلام",
+    context:
+      "Unfiltered feedback from an active business partner acknowledging the engineering mindset, algorithmic ad account structuring, and rapid troubleshooting under live campaign conditions.",
+    contextAr:
+      "رسالة مباشرة وغير مفلترة من شريك أعمال تؤكد على العقلية الهندسية المنضبطة في تحليل الحسابات الإعلانية، دقة الاستهداف، والسرعة الفائقة في تخطي التحديات التقنية.",
+    authorRole: "Business Partner & Account Operations Lead",
+    authorRoleAr: "شريك أعمال ومدير عمليات الحسابات الإعلانية",
+    category: "Engineering Rigor & Execution Trust",
+    categoryAr: "عقلية هندسية منضبطة وموثوقية تنفيذية",
+    screenshot: "/testimonials/whatsapp-feedback-2.png",
+    timestamp: "4:44 PM",
+    metricsBadge: "100% Execution Trust",
+    metricsBadgeAr: "دقة وثقة تنفيذية كاملة",
+    highlights: [
+      "Engineering-first approach to paid media architectures and data attribution",
+      "Eliminating guesswork through rapid ad set diagnosis and bid optimization",
+      "High client retention built on radical transparency and commercial results",
+    ],
+    highlightsAr: [
+      "منهجية هندسية صارمة في هيكلة الحملات وقراءة مؤشرات البيانات الإعلانية",
+      "تجاوز التحديات التقنية بسرعة وحسم دون إهدار الميزانية",
+      "ثقة وشراكة مستمرة قائمة على الشفافية التامة وتحقيق الأهداف",
     ],
   },
 ];

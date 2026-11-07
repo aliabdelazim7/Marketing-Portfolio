@@ -7,6 +7,7 @@ import { CaseStudiesSection } from './components/CaseStudiesSection';
 import { AboutSection } from './components/AboutSection';
 import { ExpertiseSection } from './components/ExpertiseSection';
 import { ExperienceTimeline } from './components/ExperienceTimeline';
+import { TestimonialsSection } from './components/TestimonialsSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 
@@ -22,6 +23,7 @@ export const App: React.FC = () => {
           <AboutSection />
           <ExpertiseSection />
           <ExperienceTimeline />
+          <TestimonialsSection />
           <ContactSection />
         </main>
         <Footer />
