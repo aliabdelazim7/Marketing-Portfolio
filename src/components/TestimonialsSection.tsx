@@ -56,8 +56,8 @@ export const TestimonialsSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Testimonials Grid (2 High-Impact Cards) */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+        {/* Testimonials Grid (3 High-Impact Cards) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
           {testimonialsList.map((item: TestimonialItem) => (
             <div
               key={item.id}

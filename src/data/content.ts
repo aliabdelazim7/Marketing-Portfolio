@@ -1923,4 +1923,31 @@ export const testimonialsList: TestimonialItem[] = [
       "ثقة وشراكة مستمرة قائمة على الشفافية التامة وتحقيق الأهداف",
     ],
   },
+  {
+    id: "whatsapp-retention-partnership",
+    quote: "اللهم بارك يا بشمهندس علي والله.. وعدت و وفيت و مكملين مع بعض باذن الله ❤️",
+    quoteAr: "اللهم بارك يا بشمهندس علي والله.. وعدت و وفيت و مكملين مع بعض باذن الله ❤️",
+    context:
+      "A message from an ongoing client confirming target fulfillment, reliability on deliverables, and renewing for continuous long-term campaign partnership.",
+    contextAr:
+      "رسالة مباشرة من عميل تؤكد الوفاء بالوعود التسويقية، تحقيق المستهدفات المتفق عليها، وتجديد التعاقد لشراكة طويلة الأمد.",
+    authorRole: "E-Commerce Brand Founder & Client",
+    authorRoleAr: "مؤسس علامة تجارية ومتجر إلكتروني",
+    category: "Contract Renewal & Target Delivery",
+    categoryAr: "تحقيق المستهدف وتجديد الشراكة",
+    screenshot: "/testimonials/whatsapp-feedback-3.png",
+    timestamp: "12:47 AM",
+    metricsBadge: "Long-Term Retention",
+    metricsBadgeAr: "تجديد وشراكة مستمرة",
+    highlights: [
+      "Hitting agreed performance milestones and ROAS targets consistently",
+      "Transition from initial test phase into ongoing monthly retainer growth",
+      "High client loyalty built on delivering promised results without excuses",
+    ],
+    highlightsAr: [
+      "تحقيق المستهدفات البيعية والعائد الاستثماري المتفق عليه في مرحلة الإطلاق",
+      "الانتقال السلس من مرحلة الاختبار المبدئي إلى شراكة شهرية مستدامة ومربحة",
+      "بناء علاقة عمل طويلة الأمد قائمة على الوفاء بالوعود وتحقيق أرقام حقيقية",
+    ],
+  },
 ];

@@ -49,7 +49,8 @@ const requiredFiles = [
   'public/results/shopify-usd-scale.png',
   'public/results/google-ads-q4.png',
   'public/testimonials/whatsapp-feedback-1.jpg',
-  'public/testimonials/whatsapp-feedback-2.png'
+  'public/testimonials/whatsapp-feedback-2.png',
+  'public/testimonials/whatsapp-feedback-3.png'
 ];
 
 requiredFiles.forEach(file => {
