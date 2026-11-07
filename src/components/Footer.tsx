@@ -62,7 +62,7 @@ export const Footer: React.FC = () => {
           <div>{t.footer.rights}</div>
           <div className="flex items-center gap-2">
             <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-live" />
-            <span>Cairo, Egypt (UTC+2) • Worldwide Availability</span>
+            <span>{lang === 'ar' ? 'إدارة الحملات الإقليمية والدولية (عن بُعد) • الخليج ومصر' : 'Remote Worldwide • GCC & MENA Coverage'}</span>
           </div>
         </div>
 

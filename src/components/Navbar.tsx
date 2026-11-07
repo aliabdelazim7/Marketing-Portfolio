@@ -98,14 +98,14 @@ export const Navbar: React.FC = () => {
 
             {/* Right Actions */}
             <div className="flex items-center gap-2 sm:gap-3">
-              {/* Live Cairo Clock */}
+              {/* Live Status Clock */}
               <div className="hidden xl:flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface border border-border-hairline text-xs font-mono text-ink-muted">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-live opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-live"></span>
                 </span>
                 <Clock className="w-3.5 h-3.5 text-ink-muted" />
-                <span>CAI {cairoTime || 'UTC+2'}</span>
+                <span>LIVE {cairoTime || 'UTC+2'}</span>
               </div>
 
               {/* Language Switcher */}
@@ -153,7 +153,7 @@ export const Navbar: React.FC = () => {
               </span>
               <span>{t.meta.availability}</span>
             </div>
-            <span>CAIRO {cairoTime}</span>
+            <span>LIVE {cairoTime}</span>
           </div>
 
           {/* Links */}
