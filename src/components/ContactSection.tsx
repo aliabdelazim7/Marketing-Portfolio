@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { Mail, MessageSquare, Copy, Check, Send, Sparkles, Clock, ArrowUpRight } from 'lucide-react';
+import { Mail, MessageSquare, Copy, Check, Send, Sparkles, Clock } from 'lucide-react';
 
 export const ContactSection: React.FC = () => {
   const { lang, t, isRtl } = useLanguage();
@@ -119,35 +119,6 @@ export const ContactSection: React.FC = () => {
                   className="min-h-[44px] px-4 rounded-lg bg-emerald-live/20 hover:bg-emerald-live text-emerald-live hover:text-white text-xs font-bold font-mono transition-colors flex items-center justify-center"
                 >
                   {lang === 'ar' ? 'محادثة' : 'Chat'}
-                </a>
-              </div>
-
-              {/* LinkedIn channel */}
-              <div className="p-4 rounded-xl bg-canvas-dark border border-border-dark flex items-center justify-between gap-3">
-                <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-lg bg-surface-dark flex items-center justify-center shrink-0 text-sky-400">
-                    <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                      <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.53 1.53 0 1 0 0-3.06 1.53 1.53 0 0 0 0 3.06m1.39 9.74v-8.37H5.07v8.37h2.78z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <span className="text-[11px] text-ink-light-muted block">
-                      {t.contactSection.linkedinLabel}
-                    </span>
-                    <span className="font-mono text-xs sm:text-sm font-bold text-white">
-                      in/ali-abdelazim
-                    </span>
-                  </div>
-                </div>
-
-                <a
-                  href="https://linkedin.com/in/ali-abdelazim"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg bg-surface-dark hover:bg-sky-500 hover:text-white text-ink-light-muted transition-colors shrink-0"
-                  aria-label="LinkedIn Profile"
-                >
-                  <ArrowUpRight className={`w-4 h-4 ${isRtl ? 'rotate-[-90deg]' : ''}`} />
                 </a>
               </div>
 

@@ -79,7 +79,6 @@ const contentFile = fs.readFileSync('src/data/content.ts', 'utf8');
 assertTest('Email credential check', contentFile.includes('ali.performance.ads@gmail.com'));
 assertTest('Phone number check', contentFile.includes('+20 155 322 4824'));
 assertTest('WhatsApp link check', contentFile.includes('201553224824'));
-assertTest('LinkedIn profile check', contentFile.includes('linkedin.com/in/ali-abdelazim'));
 
 // 4. HTTP Live Server Health & Status 200
 console.log('\n🌐 4. Testing Live HTTP Server Response:');
