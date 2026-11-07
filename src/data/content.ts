@@ -112,11 +112,9 @@ export const contentData = {
       statCampaignsLabel: "Peak ROAS Achieved",
     },
     nav: {
-      about: "Philosophy",
       work: "Work",
+      about: "Philosophy",
       expertise: "Capabilities",
-      methodology: "Methodology",
-      calculator: "Calculator",
       journey: "Timeline",
       contact: "Contact",
       auditButton: "Audit",
@@ -133,7 +131,7 @@ export const contentData = {
       ],
     },
     about: {
-      chapter: "01 // PHILOSOPHY & MINDSET",
+      chapter: "02 // PHILOSOPHY & MINDSET",
       title: "Advertising is not magic or vanity likes. It is commercial capital deployed to generate profit.",
       p1: "Over two years in performance marketing and media buying, I've seen brands make the same two costly mistakes: either creating artsy ads that look pretty but don't generate a single sale, or randomly boosting posts inside Ads Manager without understanding customer psychology or purchase triggers.",
       p2: "My approach combines both: direct-response creative that hooks your ideal buyer and compels them to order, paired with disciplined campaign architecture (CBO, Google Performance Max) and bulletproof server-side tracking (CAPI) to eliminate wasted spend.",
@@ -154,7 +152,7 @@ export const contentData = {
       ],
     },
     caseStudiesSection: {
-      chapter: "02 // VERIFIED CASE STUDIES",
+      chapter: "01 // VERIFIED CASE STUDIES",
       title: "Real commercial results backed by raw data and strategy.",
       subtitle:
         "Every case study below represents actual client campaigns, verified Ads Manager screenshots, and proven marketing methodology across Meta and Google.",
@@ -203,12 +201,12 @@ export const contentData = {
       note: "Based on standard performance funnel economics. Use this model during our discovery call to evaluate campaign viability.",
     },
     experienceSection: {
-      chapter: "06 // PROFESSIONAL JOURNEY",
+      chapter: "04 // PROFESSIONAL JOURNEY",
       title: "Focused, rigorous hands-on execution.",
       subtitle: "Two years of continuous ad spend management, testing, and conversion optimization.",
     },
     contactSection: {
-      chapter: "07 // DIRECT CONTACT",
+      chapter: "05 // DIRECT CONTACT & AUDIT",
       title: "Ready to scale your paid acquisition with discipline?",
       subtitle:
         "Whether you're launching a new venture, troubleshooting rising customer acquisition costs, or seeking a media buyer to scale an existing funnel.",
@@ -275,11 +273,9 @@ export const contentData = {
       statCampaignsLabel: "أعلى عائد إعلاني محقق (ROAS)",
     },
     nav: {
-      about: "الفلسفة",
       work: "النتائج",
+      about: "الفلسفة",
       expertise: "الخدمات",
-      methodology: "المنهجية",
-      calculator: "الحاسبة",
       journey: "المسار",
       contact: "تواصل",
       auditButton: "طلب تدقيق",
@@ -296,7 +292,7 @@ export const contentData = {
       ],
     },
     about: {
-      chapter: "01 // الفلسفة ومنهجية العمل",
+      chapter: "02 // الفلسفة ومنهجية العمل",
       title: "الإعلانات المدفوعة ليست مجرد تفاعل سطحي.. بل استثمار مباشر يجب أن ينعكس نمواً في أرباحك.",
       p1: "خلال عامين من الإدارة الميدانية للحملات الإعلانية وشراء المساحات الإعلانية (Media Buying)، لمست فجوتين متكررتين لدى معظم الشركات والعلامات التجارية: إما إعلانات ذات تصاميم جذابة لكنها تفتقر للقدرة البيعية وتهدر الميزانيات، أو تركيز تقني بحت على إعدادات الحساب دون فهم عميق لسيكولوجية المشتري ودوافع اتخاذ القرار.",
       p2: "ترتكز منهجيتي على التوفيق بين الجانبين: إنتاج محتوى إعلاني موجه ومقاطع فيديو تحفز الرغبة الشرائية وتخاطب المشترين بدقة، بالتوازي مع بنية فنية منضبطة تعتمد على حملات CBO الموحدة، حملات Google Performance Max، وتتبع الخادم المباشر عبر Conversions API للقضاء على أي هدر في الميزانية.",
@@ -317,7 +313,7 @@ export const contentData = {
       ],
     },
     caseStudiesSection: {
-      chapter: "02 // نتائج وحملات موثقة بالأرقام",
+      chapter: "01 // نتائج وحملات موثقة بالأرقام",
       title: "نتائج حقيقية من واقع الحملات.. قائمة على بيانات موثقة وقابلة للتحقق.",
       subtitle:
         "تستعرض كل دراسة حالة أدناه حملة واقعية مع مؤشرات الأداء الأساسية، وسجل النتائج، واستراتيجية التنفيذ المعتمدة على منصات Meta وGoogle.",
@@ -366,12 +362,12 @@ export const contentData = {
       note: "يعتمد هذا النموذج على معادلات مسار التحويل المعيارية. يمكننا مناقشة هذه الأرقام تفصيلياً خلال جلسة تدقيق الحساب لتحديد المستهدفات بدقة.",
     },
     experienceSection: {
-      chapter: "06 // الخبرة والمسار المهني",
+      chapter: "04 // الخبرة والمسار المهني",
       title: "عامان من الخبرة الميدانية المركزة في إدارة وتوسيع الحملات الإعلانية.",
       subtitle: "إدارة تشغيلية يومية لميزانيات إعلانية على منصات Meta وGoogle، تشمل اختبار مئات الأصول الإعلانية وتحسين معدلات التحويل التجاري.",
     },
     contactSection: {
-      chapter: "07 // قنوات الاتصال والتعاون",
+      chapter: "05 // قنوات الاتصال وطلب التدقيق",
       title: "هل أنت مستعد لمضاعفة مبيعاتك وبناء منظومة إعلانية رابحة؟",
       subtitle:
         "سواء كنت تؤسس علامة تجارية جديدة، أو تسعى لخفض تكلفة الاستحواذ ورفع كفاءة ميزانياتك الإعلانية، أو تبحث عن متخصص يدير ويوجه حساباتك باحترافية.",

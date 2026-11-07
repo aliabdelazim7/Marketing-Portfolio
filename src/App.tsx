@@ -3,11 +3,9 @@ import { LanguageProvider } from './context/LanguageContext';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { LiveTicker } from './components/LiveTicker';
-import { AboutSection } from './components/AboutSection';
 import { CaseStudiesSection } from './components/CaseStudiesSection';
+import { AboutSection } from './components/AboutSection';
 import { ExpertiseSection } from './components/ExpertiseSection';
-import { MethodologySection } from './components/MethodologySection';
-import { UnitEconomicsSimulator } from './components/UnitEconomicsSimulator';
 import { ExperienceTimeline } from './components/ExperienceTimeline';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
@@ -20,11 +18,9 @@ export const App: React.FC = () => {
         <main className="flex-1">
           <Hero />
           <LiveTicker />
-          <AboutSection />
           <CaseStudiesSection />
+          <AboutSection />
           <ExpertiseSection />
-          <MethodologySection />
-          <UnitEconomicsSimulator />
           <ExperienceTimeline />
           <ContactSection />
         </main>

@@ -46,11 +46,9 @@ export const Navbar: React.FC = () => {
   }, [mobileMenuOpen]);
 
   const navLinks = [
-    { href: '#about', label: t.nav.about },
     { href: '#work', label: t.nav.work },
+    { href: '#about', label: t.nav.about },
     { href: '#expertise', label: t.nav.expertise },
-    { href: '#methodology', label: t.nav.methodology },
-    { href: '#calculator', label: t.nav.calculator },
     { href: '#timeline', label: t.nav.journey },
     { href: '#contact', label: t.nav.contact },
   ];

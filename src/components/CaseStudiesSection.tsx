@@ -13,6 +13,9 @@ import {
   Search,
   ShoppingBag,
   Briefcase,
+  Maximize2,
+  X,
+  Clock,
 } from 'lucide-react';
 
 export const CaseStudiesSection: React.FC = () => {
@@ -20,6 +23,7 @@ export const CaseStudiesSection: React.FC = () => {
   const [selectedCaseStudy, setSelectedCaseStudy] = useState<CaseStudy | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<PlatformCategory>('all');
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
+  const [lightboxImage, setLightboxImage] = useState<string | null>(null);
 
   // Category counts
   const counts = {
@@ -75,15 +79,15 @@ export const CaseStudiesSection: React.FC = () => {
 
   const handleFilterSelect = (catId: PlatformCategory) => {
     setSelectedCategory(catId);
-    // When user selects a specific category tab other than all, we show all of its items
     if (catId !== 'all') {
       setIsExpanded(true);
     }
   };
 
   return (
-    <section id="work" className="py-24 md:py-32 bg-canvas-subtle border-b border-border-hairline">
+    <section id="work" className="py-20 md:py-28 bg-canvas-subtle border-b border-border-hairline">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 pb-8 border-b border-border-hairline">
           <div>
@@ -142,109 +146,47 @@ export const CaseStudiesSection: React.FC = () => {
                     : 'border-border-hairline hover:border-accent/50'
                 }`}
               >
-                <div className="grid grid-cols-1 lg:grid-cols-12">
-                  {/* Left Meta & Narrative Column */}
-                  <div className="lg:col-span-7 p-6 sm:p-8 lg:p-10 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-border-hairline">
-                    <div>
-                      {/* Index & Category Header */}
-                      <div className="flex flex-wrap items-center justify-between gap-3 pb-4 mb-4 border-b border-border-hairline text-xs font-mono">
-                        <div className="flex flex-wrap items-center gap-2 sm:gap-3 min-w-0">
-                          <span className="text-accent font-bold shrink-0">CASE_0{index + 1}</span>
-                          <span className="text-border-hairline shrink-0">•</span>
-                          <span className="text-ink-muted">
-                            <bdi>{lang === 'ar' ? study.categoryAr : study.category}</bdi>
-                          </span>
-                          {isFlagship && (
-                            <span className="px-2 py-0.5 rounded bg-accent/10 text-accent font-mono text-[10px] font-bold shrink-0">
-                              {lang === 'ar' ? '★ دراسة رئيسية' : '★ FLAGSHIP CASE'}
-                            </span>
-                          )}
-                        </div>
-                        <span className="text-ink-muted text-[11px] shrink-0 font-normal">
-                          <bdi>{lang === 'ar' ? study.timeframeAr : study.timeframe}</bdi>
-                        </span>
-                      </div>
+                {/* Top Card Bar */}
+                <div className="px-6 py-3.5 sm:px-8 bg-surface/70 border-b border-border-hairline flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
+                  <div className="flex flex-wrap items-center gap-2 sm:gap-3 min-w-0">
+                    <span className="text-accent font-bold shrink-0">CASE_0{index + 1}</span>
+                    <span className="text-border-hairline shrink-0">•</span>
+                    <span className="text-ink font-semibold font-sans">
+                      <bdi>{lang === 'ar' ? study.categoryAr : study.category}</bdi>
+                    </span>
+                    {isFlagship && (
+                      <span className="px-2.5 py-0.5 rounded-full bg-accent/10 text-accent font-mono text-[10px] font-bold shrink-0">
+                        {lang === 'ar' ? '★ نتائج رئيسية موثقة' : '★ VERIFIED FLAGSHIP'}
+                      </span>
+                    )}
+                  </div>
+                  <div className="flex items-center gap-1.5 text-ink-muted text-[11px] shrink-0 font-normal">
+                    <Clock className="w-3.5 h-3.5 text-accent" />
+                    <span><bdi>{lang === 'ar' ? study.timeframeAr : study.timeframe}</bdi></span>
+                  </div>
+                </div>
 
+                {/* Main 2-Column Split: Text & Metrics on one side, SCREENSHOT IN THE FACE on other */}
+                <div className="grid grid-cols-1 lg:grid-cols-12">
+                  
+                  {/* Left Column: Narrative, Key Numbers, & Details */}
+                  <div className="lg:col-span-6 p-6 sm:p-8 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-border-hairline">
+                    <div>
                       {/* Headline */}
                       <h3
-                        className="text-xl sm:text-2xl md:text-3xl font-extrabold text-ink tracking-tight mb-4 group-hover:text-accent transition-colors duration-200 leading-snug"
+                        className="text-xl sm:text-2xl font-extrabold text-ink tracking-tight mb-2 group-hover:text-accent transition-colors duration-200 leading-snug"
                         dir={isRtl ? 'rtl' : 'ltr'}
                       >
                         <bdi>{lang === 'ar' ? study.titleAr : study.title}</bdi>
                       </h3>
 
                       {/* Tagline */}
-                      <p className="text-sm sm:text-base text-ink-secondary leading-relaxed mb-6 font-medium">
+                      <p className="text-xs sm:text-sm text-ink-secondary leading-relaxed mb-6 font-medium">
                         {lang === 'ar' ? study.taglineAr : study.tagline}
                       </p>
 
-                      {/* Problem teaser */}
-                      <div className="p-4 rounded-xl bg-surface/70 border border-border-hairline text-xs sm:text-sm text-ink-secondary mb-6 leading-relaxed">
-                        <span className="font-bold text-ink block mb-1">
-                          {lang === 'ar' ? 'التحدي التشغيلي والأهداف:' : 'The Core Challenge:'}
-                        </span>
-                        {lang === 'ar' ? study.challengeAr : study.challenge}
-                      </div>
-                    </div>
-
-                    {/* Actions & Tags */}
-                    <div className="pt-4 border-t border-border-hairline flex flex-wrap items-center justify-between gap-4">
-                      <div className="flex flex-wrap items-center gap-2">
-                        {study.tags.slice(0, 3).map((tag, tIdx) => (
-                          <span
-                            key={tIdx}
-                            className="px-2.5 py-1 rounded bg-surface text-[11px] font-mono text-ink-muted border border-border-hairline"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-
-                      <div className="flex flex-wrap items-center gap-2">
-                        {study.proofImage && (
-                          <a
-                            href={study.proofImage}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1.5 px-3.5 py-2 min-h-[40px] rounded-full bg-surface hover:bg-emerald-live hover:text-white text-[11px] font-mono font-bold text-ink border border-border-hairline transition-colors"
-                            title={
-                              lang === 'ar'
-                                ? 'سجل التحقق من مدير الإعلانات'
-                                : 'Inspect raw Ads Manager capture'
-                            }
-                          >
-                            <ShieldCheck className="w-3.5 h-3.5 text-emerald-live" />
-                            <span>
-                              {study.platform === 'google'
-                                ? lang === 'ar'
-                                ? 'توثيق Google Ads'
-                                : 'Google Proof'
-                              : lang === 'ar'
-                              ? 'توثيق الحساب'
-                              : 'Verified Proof'}
-                            </span>
-                          </a>
-                        )}
-
-                        <button
-                          onClick={() => setSelectedCaseStudy(study)}
-                          className="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 min-h-[40px] rounded-full bg-ink text-canvas hover:bg-accent text-xs sm:text-sm font-bold tracking-wide transition-all duration-200 shadow-sm cursor-pointer"
-                        >
-                          <span>{t.caseStudiesSection.ctaDetails}</span>
-                          <ArrowUpRight className={`w-4 h-4 ${isRtl ? 'rotate-[-90deg]' : ''}`} />
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Right Metrics Grid Column */}
-                  <div className="lg:col-span-5 bg-surface/50 p-6 sm:p-8 lg:p-10 flex flex-col justify-between">
-                    <div>
-                      <span className="font-mono text-xs uppercase tracking-wider text-ink-muted block mb-6 font-bold">
-                        {lang === 'ar' ? 'المؤشرات والنتائج الموثقة' : 'Verified Performance Metrics'}
-                      </span>
-
-                      <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:gap-5">
+                      {/* 4 Key Metrics Grid */}
+                      <div className="grid grid-cols-2 gap-2.5 sm:gap-3 mb-6">
                         {study.metrics.map((metric, mIdx) => {
                           const parts = metric.value.trim().split(/\s+/);
                           const hasUnit = parts.length >= 2;
@@ -254,19 +196,19 @@ export const CaseStudiesSection: React.FC = () => {
                           return (
                             <div
                               key={mIdx}
-                              className="p-3.5 sm:p-4 rounded-xl bg-canvas border border-border-hairline shadow-xs flex flex-col justify-between overflow-hidden min-w-0"
+                              className="p-3 sm:p-3.5 rounded-xl bg-surface border border-border-hairline shadow-2xs flex flex-col justify-between overflow-hidden min-w-0"
                             >
-                              <div className="flex items-baseline gap-1.5 flex-wrap min-w-0 mb-1.5 leading-none">
-                                <span className="font-mono text-base sm:text-lg md:text-xl lg:text-2xl font-black text-ink tracking-tight break-all">
+                              <div className="flex items-baseline gap-1.5 flex-wrap min-w-0 mb-1 leading-none">
+                                <span className="font-mono text-base sm:text-lg md:text-xl font-black text-ink tracking-tight break-all">
                                   {numPart}
                                 </span>
                                 {hasUnit && (
-                                  <span className="text-xs sm:text-sm font-bold text-ink-muted shrink-0 font-sans">
+                                  <span className="text-xs font-bold text-ink-muted shrink-0 font-sans">
                                     {unitPart}
                                   </span>
                                 )}
                               </div>
-                              <div className="mt-1 min-w-0">
+                              <div className="min-w-0">
                                 <span className="text-xs font-bold text-ink-secondary block truncate">
                                   {lang === 'ar' ? metric.labelAr : metric.label}
                                 </span>
@@ -278,10 +220,96 @@ export const CaseStudiesSection: React.FC = () => {
                           );
                         })}
                       </div>
+
+                      {/* Problem teaser */}
+                      <div className="p-3.5 rounded-xl bg-surface/70 border border-border-hairline text-xs sm:text-sm text-ink-secondary leading-relaxed mb-6">
+                        <span className="font-bold text-ink block mb-1">
+                          {lang === 'ar' ? 'التحدي التجاري والأهداف:' : 'The Core Challenge:'}
+                        </span>
+                        {lang === 'ar' ? study.challengeAr : study.challenge}
+                      </div>
                     </div>
 
-                    {/* Quick takeaway bar */}
-                    <div className="mt-8 p-4 rounded-xl bg-canvas border border-border-hairline flex items-start gap-3">
+                    {/* Actions & Tags */}
+                    <div className="pt-4 border-t border-border-hairline flex flex-wrap items-center justify-between gap-3">
+                      <div className="flex flex-wrap items-center gap-1.5">
+                        {study.tags.slice(0, 3).map((tag, tIdx) => (
+                          <span
+                            key={tIdx}
+                            className="px-2 py-0.5 rounded bg-surface text-[10px] sm:text-[11px] font-mono text-ink-muted border border-border-hairline"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+
+                      <button
+                        onClick={() => setSelectedCaseStudy(study)}
+                        className="inline-flex items-center gap-1.5 px-4 py-2 min-h-[40px] rounded-full bg-ink text-canvas hover:bg-accent text-xs font-bold tracking-wide transition-all duration-200 shadow-sm cursor-pointer"
+                      >
+                        <span>{lang === 'ar' ? 'تفاصيل الاستراتيجية' : 'Full Strategy'}</span>
+                        <ArrowUpRight className={`w-3.5 h-3.5 ${isRtl ? 'rotate-[-90deg]' : ''}`} />
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Right Column: SCREENSHOT IN THE FACE (Raw Verified Capture) */}
+                  <div className="lg:col-span-6 p-6 sm:p-8 bg-surface/40 flex flex-col justify-between">
+                    <div>
+                      {/* Screenshot Header Bar */}
+                      <div className="flex items-center justify-between pb-3 mb-3 border-b border-border-hairline text-xs font-mono">
+                        <div className="flex items-center gap-2 text-emerald-live font-bold">
+                          <span className="relative flex h-2 w-2">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-live opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-live"></span>
+                          </span>
+                          <span className="text-[11px] sm:text-xs">
+                            {study.platform === 'google'
+                              ? (lang === 'ar' ? 'سجل معتمد: Google Ads Manager' : 'Verified: Google Ads Manager')
+                              : (lang === 'ar' ? 'سجل معتمد: Meta Ads Manager' : 'Verified: Meta Ads Manager')}
+                          </span>
+                        </div>
+
+                        {study.proofImage && (
+                          <button
+                            onClick={() => setLightboxImage(study.proofImage || null)}
+                            className="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface hover:bg-border-hairline text-[11px] text-ink-muted hover:text-ink transition-colors cursor-pointer"
+                            title={lang === 'ar' ? 'تكبير صورة السجل' : 'Enlarge Capture'}
+                          >
+                            <Maximize2 className="w-3 h-3 text-accent" />
+                            <span>{lang === 'ar' ? 'تكبير الصورة' : 'Enlarge'}</span>
+                          </button>
+                        )}
+                      </div>
+
+                      {/* The Visible Screenshot Preview */}
+                      {study.proofImage ? (
+                        <div
+                          onClick={() => setLightboxImage(study.proofImage || null)}
+                          className="relative rounded-xl overflow-hidden border border-border-hairline shadow-sm group/img cursor-zoom-in bg-canvas"
+                        >
+                          <img
+                            src={study.proofImage}
+                            alt={study.title}
+                            loading="lazy"
+                            className="w-full h-[220px] sm:h-[280px] lg:h-[300px] object-cover object-top transition-transform duration-300 group-hover/img:scale-[1.02]"
+                          />
+                          <div className="absolute inset-0 bg-ink/35 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center p-4">
+                            <span className="px-4 py-2 rounded-full bg-ink/90 text-canvas text-xs font-bold font-mono flex items-center gap-2 shadow-lg backdrop-blur-xs">
+                              <Maximize2 className="w-3.5 h-3.5 text-accent" />
+                              <span>{lang === 'ar' ? 'انقر لتكبير السجل وفحص الأرقام' : 'Click to inspect full screenshot'}</span>
+                            </span>
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="h-[220px] rounded-xl bg-surface border border-dashed border-border-hairline flex items-center justify-center text-xs font-mono text-ink-muted">
+                          {lang === 'ar' ? 'سجل الأداء معتمد ومؤكد' : 'Performance Data Verified'}
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Growth Insight Takeaway */}
+                    <div className="mt-5 p-3.5 rounded-xl bg-canvas border border-border-hairline flex items-start gap-2.5">
                       <TrendingUp className="w-4 h-4 text-emerald-live shrink-0 mt-0.5" />
                       <p className="text-xs text-ink-secondary leading-relaxed">
                         <span className="font-bold text-ink">
@@ -291,6 +319,7 @@ export const CaseStudiesSection: React.FC = () => {
                       </p>
                     </div>
                   </div>
+
                 </div>
               </article>
             );
@@ -318,7 +347,7 @@ export const CaseStudiesSection: React.FC = () => {
 
               <button
                 onClick={() => setIsExpanded(true)}
-                className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-ink text-canvas hover:bg-accent text-sm font-bold tracking-wide transition-all duration-200 shadow-md cursor-pointer hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2.5 px-7 py-3.5 min-h-[48px] rounded-full bg-ink text-canvas hover:bg-accent text-sm font-bold tracking-wide transition-all duration-200 shadow-md cursor-pointer hover:-translate-y-0.5"
               >
                 <span>
                   {t.caseStudiesSection.expandButton} (+{caseStudiesList.length - 2})
@@ -337,7 +366,7 @@ export const CaseStudiesSection: React.FC = () => {
                 setIsExpanded(false);
                 document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-surface hover:bg-canvas border border-border-hairline text-ink-secondary hover:text-ink text-xs sm:text-sm font-bold font-mono transition-colors cursor-pointer"
+              className="inline-flex items-center gap-2 px-6 py-3 min-h-[44px] rounded-full bg-surface hover:bg-canvas border border-border-hairline text-ink-secondary hover:text-ink text-xs sm:text-sm font-bold font-mono transition-colors cursor-pointer"
             >
               <ChevronUp className="w-4 h-4" />
               <span>{t.caseStudiesSection.collapseButton}</span>
@@ -351,6 +380,40 @@ export const CaseStudiesSection: React.FC = () => {
         caseStudy={selectedCaseStudy}
         onClose={() => setSelectedCaseStudy(null)}
       />
+
+      {/* High-Resolution Screenshot Lightbox Modal */}
+      {lightboxImage && (
+        <div
+          className="fixed inset-0 z-50 bg-ink/90 backdrop-blur-md flex items-center justify-center p-3 sm:p-6"
+          onClick={() => setLightboxImage(null)}
+        >
+          <div
+            className="relative max-w-5xl w-full max-h-[92vh] bg-canvas rounded-2xl overflow-hidden shadow-2xl border border-border-hairline flex flex-col my-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between p-4 bg-surface border-b border-border-hairline">
+              <span className="text-xs font-mono font-bold text-ink flex items-center gap-2">
+                <ShieldCheck className="w-4 h-4 text-emerald-live" />
+                <span>{lang === 'ar' ? 'سجل التحقق من مدير الإعلانات (عرض كامل)' : 'Verified Ads Manager Capture (Full Resolution)'}</span>
+              </span>
+              <button
+                onClick={() => setLightboxImage(null)}
+                className="w-10 h-10 min-w-[40px] min-h-[40px] flex items-center justify-center rounded-full bg-canvas hover:bg-border-hairline text-ink transition-colors cursor-pointer"
+                aria-label="Close"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+            <div className="p-2 sm:p-4 overflow-auto max-h-[calc(92vh-64px)] bg-canvas-dark flex items-center justify-center">
+              <img
+                src={lightboxImage}
+                alt="Campaign Proof Screenshot"
+                className="max-w-full h-auto object-contain rounded-lg shadow-md"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
