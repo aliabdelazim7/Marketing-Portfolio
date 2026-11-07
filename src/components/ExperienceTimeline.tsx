@@ -43,9 +43,15 @@ export const ExperienceTimeline: React.FC = () => {
                     <h3 className="font-extrabold text-lg sm:text-xl text-ink">
                       {lang === 'ar' ? item.roleAr : item.role}
                     </h3>
-                    <span className="text-xs sm:text-sm font-semibold text-ink-secondary">
-                      {lang === 'ar' ? item.organizationAr : item.organization}
-                    </span>
+                    <div className="flex flex-wrap items-center gap-2 mt-0.5">
+                      <span className="text-xs sm:text-sm font-semibold text-ink-secondary">
+                        {lang === 'ar' ? item.organizationAr : item.organization}
+                      </span>
+                      <span className="text-border-hairline hidden sm:inline">•</span>
+                      <span className="px-2 py-0.5 rounded bg-surface border border-border-hairline text-[10px] sm:text-[11px] font-mono text-ink-muted">
+                        {lang === 'ar' ? item.typeAr : item.type}
+                      </span>
+                    </div>
                   </div>
                 </div>
 
