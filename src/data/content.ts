@@ -1702,8 +1702,8 @@ export const experienceTimeline: ExperienceItem[] = [
   {
     period: "Jul 2026 — Oct 2026",
     periodAr: "يوليو 2026 — أكتوبر 2026",
-    role: "Media Buyer",
-    roleAr: "ميديا باير ومسؤول إعلانات الأداء (Media Buyer)",
+    role: "Mid-Level Media Buyer",
+    roleAr: "ميد ليفل ميديا باير (Mid-Level Media Buyer)",
     organization: "Assemat Al-Kawn for Elevators (عاصمة الكون للمصاعد)",
     organizationAr: "شركة عاصمة الكون للمصاعد",
     type: "Full-time • On-site",
@@ -1728,8 +1728,8 @@ export const experienceTimeline: ExperienceItem[] = [
   {
     period: "Apr 2026 — Jul 2026",
     periodAr: "أبريل 2026 — يوليو 2026",
-    role: "Junior Media Buyer",
-    roleAr: "ميديا باير لمنتجات التكنولوجيا والبرمجيات (Junior Media Buyer)",
+    role: "Media Buyer",
+    roleAr: "ميديا باير لمنتجات التكنولوجيا والبرمجيات (Media Buyer)",
     organization: "CODEVER",
     organizationAr: "شركة CODEVER للحلول البرمجية",
     type: "Full-time • Remote",
